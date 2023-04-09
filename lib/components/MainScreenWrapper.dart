@@ -22,7 +22,7 @@ class MainScreenWrapper extends StatelessWidget {
             )
           ),
           Text(
-            '${weather.description}'
+            weather.description
           ),
           const Spacer(),
           WeatherCard(

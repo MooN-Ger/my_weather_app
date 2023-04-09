@@ -7,7 +7,7 @@ class WeatherCard extends StatelessWidget {
   final double temperatureFontSize;
   final double iconScale;
 
-  const WeatherCard({Key? key, this.title = '', this.temperature = 0, this.iconCode = '', this.temperatureFontSize = 32, this.iconScale = 2}) : super(key: key);
+  const WeatherCard({Key? key, required this.title, required this.temperature, required this.iconCode, this.temperatureFontSize = 32, this.iconScale = 2}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class WeatherCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(title),
-              Image.network("http://openweathermap.org/img/wn/$iconCode@2x.png", scale: iconScale),
+              Image.network("https://www.culture.ru/s/samaya-krasivaya-strana/images/tild3563-3464-4937-b337-653933383961__---.jpg", scale: iconScale),
               Text(
                 '$temperature°',
                 style: TextStyle(

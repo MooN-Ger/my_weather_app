@@ -3,11 +3,11 @@ import 'package:my_weather_app/models/Weather.dart';
 import 'package:http/http.dart' as http;
 
 class WeatherService {
-  static String apiKey = "76d188057f427084920b42ab46ac5fe2";
+  static const String _apiKey = "76d188057f427084920b42ab46ac5fe2";
 
   //метод получения текущей погоды:
   static Future<Weather> fetchCurrentWeather({query, String lat = "", String lon = ""}) async {
-    var url = 'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}';
+    var url = 'https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$_apiKey';
     final response = await http.post(url as Uri);
 
     if (response.statusCode == 200) {
@@ -19,7 +19,7 @@ class WeatherService {
 
   //Метод получения погоды по часам:
   static Future<List<Weather>> fetchHourlyWeather({query, String lat = "", String lon = ""}) async {
-    var url = 'https://pro.openweathermap.org/data/2.5/forecast/hourly?lat={lat}&lon={lon}&appid={API key}';
+    var url = 'https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=$lat&lon=$lon&appid=$_apiKey';
     final response = await http.post(url as Uri);
 
     if (response.statusCode == 200) {

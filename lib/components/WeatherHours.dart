@@ -17,7 +17,7 @@ class HourlyWeather extends StatelessWidget {
         itemBuilder: (context, i) {
           return WeatherCard(
             title:
-              '${hourlyWeather[i].time!.hour}:${hourlyWeather[i].time!.minute}0',
+              '${hourlyWeather[i].time.hour}:${hourlyWeather[i].time.minute}0',
             temperature: hourlyWeather[i].temperature.toInt(),
             iconCode: hourlyWeather[i].iconCode,
             temperatureFontSize: 20,

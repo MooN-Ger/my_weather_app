@@ -3,14 +3,14 @@ class Weather {
   int temperature;
   String iconCode;
   String description;
-  DateTime? time;
+  DateTime time;
 
   Weather({
-    this.cityName = '',
-    this.temperature = 0,
-    this.iconCode = '',
-    this.description = '',
-    this.time
+    required this.cityName,
+    required this.temperature,
+    required this.iconCode,
+    required this.description,
+    required this.time
   });
 
   factory Weather.fromJson(Map<String, dynamic> json) {
